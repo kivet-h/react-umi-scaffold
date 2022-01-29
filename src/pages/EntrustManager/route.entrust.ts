@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-01-29 13:17:43
  */
 
-import { MenuDataItem } from 'config/routes';
+import type { MenuDataItem } from 'config/routes';
 
 const BASE_URL = 'entrustManager';
 
