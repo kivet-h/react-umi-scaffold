@@ -2,7 +2,7 @@
  * @Description: 已同步委托
  * @Author: kivet
  * @Date: 2022-01-28 18:24:43
- * @LastEditTime: 2022-01-29 10:03:00
+ * @LastEditTime: 2022-01-29 17:01:08
  */
 
 import type { FC } from 'react';
@@ -17,7 +17,7 @@ const SyncedEntrust: FC<IProps> = () => {
       SyncedEntrust
       <Button
         onClick={() => {
-          history.push('/entrustManager/synced/detail?id=333');
+          history.push('/entrustManager/synced/detail?id=syncedEntrustId');
         }}
       >
         跳转至委托详情

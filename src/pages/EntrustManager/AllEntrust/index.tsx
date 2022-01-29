@@ -2,7 +2,7 @@
  * @Description: 全部委托
  * @Author: kivet
  * @Date: 2022-01-28 18:24:43
- * @LastEditTime: 2022-01-29 10:02:47
+ * @LastEditTime: 2022-01-29 17:00:53
  */
 
 import type { FC } from 'react';
@@ -17,7 +17,7 @@ const AllEntrust: FC<IProps> = () => {
       AllEntrust
       <Button
         onClick={() => {
-          history.push('/entrustManager/all/detail?id=222');
+          history.push('/entrustManager/all/detail?id=allEntrustID');
         }}
       >
         跳转至委托详情
