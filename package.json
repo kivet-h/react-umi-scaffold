@@ -3,6 +3,7 @@
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
+    "commit": "git add . && git-cz",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
@@ -19,6 +20,11 @@
       "prettier --parser=typescript --write"
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
     "global": "^4.4.0",
@@ -31,6 +37,8 @@
     "@types/react-dom": "^17.0.0",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.5.20",
+    "commitizen": "^4.2.4",
+    "cz-customizable": "^6.3.0",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.0",
     "typescript": "^4.1.2",
