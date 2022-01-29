@@ -2,7 +2,7 @@
  * @Description:
  * @Author: kivet
  * @Date: 2022-01-29 13:52:18
- * @LastEditTime: 2022-01-29 14:02:59
+ * @LastEditTime: 2022-01-29 15:10:34
  */
 
 import { defineConfig } from 'umi';
@@ -17,4 +17,5 @@ export default defineConfig({
     hmr: true,
   },
   fastRefresh: {}, // ? 快速刷新
+  layout: {},
 });
