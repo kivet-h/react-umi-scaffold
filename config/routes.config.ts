@@ -2,7 +2,7 @@
  * @Description: 路由配置文件
  * @Author: kivet
  * @Date: 2022-01-29 13:52:34
- * @LastEditTime: 2022-01-29 17:10:38
+ * @LastEditTime: 2022-01-29 17:23:23
  */
 
 const route = [
@@ -11,6 +11,7 @@ const route = [
     path: '/login',
     component: '@/pages/Login',
     hideInMenu: true,
+    layout: false,
   },
   {
     path: '/404',
