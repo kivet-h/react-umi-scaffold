@@ -2,39 +2,30 @@
  * @Description: 用户管理模块路由配置文件
  * @Author: kivet
  * @Date: 2022-01-29 09:09:54
- * @LastEditTime: 2022-01-29 13:17:33
+ * @LastEditTime: 2022-01-29 17:46:34
  */
 
-import type { MenuDataItem } from 'config/routes';
-
-const BASE_URL = 'userManager';
-
-const userManagerMenuRoute: MenuDataItem = {
-  // path: '/',
-  // component: '@/layouts',
-  // routes: [
-  //   {
+const userManagerMenuRoute = {
   name: '用户管理',
-  path: `/${BASE_URL}`,
+  path: '/userManager',
+  component: '@/layouts',
   icon: 'home',
   hideChildrenInMenu: true,
   routes: [
     {
       name: '用户管理',
-      path: `/${BASE_URL}`,
+      path: '/userManager',
       component: '@/pages/UserManager/List',
     },
     {
-      name: '用户详情',
-      path: `/${BASE_URL}/detail`,
+      name: '帖子详情',
+      path: '/userManager/detail',
       component: '@/pages/UserManager/UserDetail',
     },
+    {
+      redirect: '/404',
+    },
   ],
-  //   },
-  //   {
-  //     redirect: '/404',
-  //   },
-  // ],
 };
 
 module.exports = userManagerMenuRoute;

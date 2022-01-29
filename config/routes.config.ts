@@ -2,10 +2,50 @@
  * @Description: 路由配置文件
  * @Author: kivet
  * @Date: 2022-01-29 13:52:34
- * @LastEditTime: 2022-01-29 17:23:23
+ * @LastEditTime: 2022-01-29 17:56:43
  */
 
-const route = [
+const path = require('path');
+const fs = require('fs');
+
+/**
+ * 读取 pages 目录下所有页面模块的路由配置，注：路由配置文件名，必须以 route[.***].(ts|js) 的格式命名
+ * @param dir 目录
+ * @param useSubDir 是否读取子目录
+ */
+const generateRoutes = (pagesDir: string, useSubDir: boolean) => {
+  const routeFileList: any = [];
+
+  const readRouteFileList = (_dir: string, _useSubDir: boolean) => {
+    const files = fs.readdirSync(_dir);
+    files.forEach((item: any) => {
+      // 生成
+      const filePath = path.join(_dir, item);
+      const stat = fs.statSync(filePath);
+      // 判断是否为目录
+      if (stat.isDirectory() && _useSubDir) {
+        readRouteFileList(path.join(_dir, item), _useSubDir);
+      } else {
+        const reg = RegExp(/route(.*).ts|js/);
+        if (reg.test(filePath)) {
+          routeFileList.push(filePath);
+        }
+      }
+    });
+  };
+
+  // 递归读取路由配置文件
+  readRouteFileList(pagesDir, useSubDir);
+  const routes = routeFileList.map((item: string) => require(item));
+  return routes;
+};
+
+/**
+ * 读取pages目录下路由文件，自动生成路由表
+ */
+const routes = generateRoutes(path.join(__dirname, '../src/pages'), true);
+
+export default [
   {
     name: '登录',
     path: '/login',
@@ -21,86 +61,8 @@ const route = [
     path: '/',
     redirect: '/postManager',
   },
-  {
-    name: '帖子管理',
-    path: '/postManager',
-    component: '@/layouts',
-    icon: 'home',
-    hideChildrenInMenu: true,
-    routes: [
-      {
-        name: '帖子管理',
-        path: '/postManager',
-        component: '@/pages/PostManager/List',
-      },
-      {
-        name: '帖子详情',
-        path: '/postManager/detail',
-        component: '@/pages/PostManager/PostDetail',
-      },
-      {
-        redirect: '/404',
-      },
-    ],
-  },
-  {
-    name: '委托管理',
-    icon: 'home',
-    path: '/entrustManager',
-    component: '@/layouts',
-    routes: [
-      {
-        name: '全部委托',
-        path: '/entrustManager/all',
-        component: '@/pages/EntrustManager/AllEntrust',
-      },
-      {
-        name: '全部委托详情',
-        path: '/entrustManager/all/detail',
-        component: '@/pages/EntrustManager/EntrustDetail',
-        hideInMenu: true,
-      },
-      {
-        name: '已同步委托',
-        path: '/entrustManager/synced',
-        component: '@/pages/EntrustManager/SyncedEntrust',
-      },
-      {
-        name: '已同步委托详情',
-        path: '/entrustManager/synced/detail',
-        component: '@/pages/EntrustManager/EntrustDetail',
-        hideInMenu: true,
-      },
-      {
-        redirect: '/404',
-      },
-    ],
-  },
-  {
-    name: '用户管理',
-    path: '/userManager',
-    component: '@/layouts',
-    icon: 'home',
-    hideChildrenInMenu: true,
-    routes: [
-      {
-        name: '用户管理',
-        path: '/userManager',
-        component: '@/pages/UserManager/List',
-      },
-      {
-        name: '帖子详情',
-        path: '/userManager/detail',
-        component: '@/pages/UserManager/UserDetail',
-      },
-      {
-        redirect: '/404',
-      },
-    ],
-  },
+  ...routes,
   {
     redirect: '/404',
   },
 ];
-
-export default route;
