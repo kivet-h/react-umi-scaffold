@@ -2,9 +2,7 @@ declare module '*.css';
 declare module '*.less';
 declare module '*.png';
 declare module '*.svg' {
-  export function ReactComponent(
-    props: React.SVGProps<SVGSVGElement>,
-  ): React.ReactElement;
+  export function ReactComponent(props: React.SVGProps<SVGSVGElement>): React.ReactElement;
   const url: string;
   export default url;
 }
@@ -15,3 +13,9 @@ declare module '*.svg' {
 
 // ? 全局环境变量
 declare const APP_ENV: string;
+
+/**
+ * 一些 npm 包
+ */
+
+declare module 'mockjs';
