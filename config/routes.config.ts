@@ -2,7 +2,7 @@
  * @Description: 路由配置文件
  * @Author: kivet
  * @Date: 2022-01-29 13:52:34
- * @LastEditTime: 2022-01-29 17:56:43
+ * @LastEditTime: 2022-02-07 11:26:42
  */
 
 const path = require('path');
@@ -52,6 +52,12 @@ export default [
     component: '@/pages/Login',
     hideInMenu: true,
     layout: false,
+  },
+  {
+    name: '个人中心',
+    path: '/personalCenter',
+    component: '@/pages/PersonalCenter',
+    hideInMenu: true,
   },
   {
     path: '/404',
