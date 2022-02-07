@@ -10,7 +10,7 @@ node >=16.0.0
 
 ## 项目仓库地址
 
-[项目 GitHub 地址](https://github.com/kivet-h/web-sample-code/blob/feature%2Fprolayout/README.md)
+[项目 GitHub 地址](https://github.com/kivet-h/react-umi-scaffold)
 
 ## 项目介绍
 
