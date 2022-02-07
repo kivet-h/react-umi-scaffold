@@ -2,7 +2,7 @@
  * @Description: 路由配置文件
  * @Author: kivet
  * @Date: 2022-01-29 13:52:34
- * @LastEditTime: 2022-02-07 14:56:31
+ * @LastEditTime: 2022-02-07 16:41:58
  */
 
 const path = require('path');
@@ -45,7 +45,10 @@ const generateRoutes = (pagesDir: string, useSubDir: boolean) => {
  */
 const routes = generateRoutes(path.join(__dirname, '../src/pages'), true);
 
-// ? 由于是自动去获取所有模块下的 route 配置，顺序肯定是按目录循序拿到的，可能不能达到设计稿的顺序效果，所以需要进行排序处理，根据 sort 字段对菜单栏进行排序，如果没有配置sort，默认为0，即展示在菜单栏最前面
+/**
+ * 由于是自动去获取所有模块下的 route 配置，顺序肯定是按 pages 下目录循序拿到的，可能得到的菜单路由顺序不能达到设计稿的顺序效果，
+ * 所以需要进行排序处理，根据 sort 字段对菜单栏进行排序，如果没有配置sort，默认为0，即展示在菜单栏最前面
+ */
 const sortRoutes = routes.sort(
   (objA: { sort: number }, objB: { sort: number }) => (objA.sort || 0) - (objB.sort || 0),
 );
