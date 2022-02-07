@@ -2,7 +2,7 @@
  * @Description: 用户管理模块路由配置文件
  * @Author: kivet
  * @Date: 2022-01-29 09:09:54
- * @LastEditTime: 2022-01-29 17:46:34
+ * @LastEditTime: 2022-02-07 14:40:05
  */
 
 const userManagerMenuRoute = {
@@ -11,6 +11,7 @@ const userManagerMenuRoute = {
   component: '@/layouts',
   icon: 'home',
   hideChildrenInMenu: true,
+  sort: 3,
   routes: [
     {
       name: '用户管理',

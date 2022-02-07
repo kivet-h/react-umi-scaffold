@@ -2,7 +2,7 @@
  * @Description: 帖子管理模块路由配置文件
  * @Author: kivet
  * @Date: 2022-01-29 09:09:54
- * @LastEditTime: 2022-01-29 17:47:36
+ * @LastEditTime: 2022-02-07 14:54:54
  */
 
 const postManagerMenuRoute = {
@@ -11,6 +11,7 @@ const postManagerMenuRoute = {
   component: '@/layouts',
   icon: 'home',
   hideChildrenInMenu: true,
+  sort: 1,
   routes: [
     {
       name: '帖子管理',
