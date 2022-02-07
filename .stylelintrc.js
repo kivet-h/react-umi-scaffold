@@ -2,7 +2,7 @@
  * @Description: 样式校验配置文件
  * @Author: kivet
  * @Date: 2022-01-29 14:39:31
- * @LastEditTime: 2022-01-29 14:39:32
+ * @LastEditTime: 2022-02-07 13:20:23
  */
 
 module.exports = {
@@ -53,7 +53,7 @@ module.exports = {
     // ? 禁止数量的尾随零。
     'number-no-trailing-zeros': true,
     // ? 规定字符串使用双引号
-    'string-quotes': 'double',
+    'string-quotes': 'single',
     // ? 禁止0后面的长度单位
     'length-zero-no-unit': true,
     // ? 规定单位使用小写

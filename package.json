@@ -1,5 +1,9 @@
 {
+  "name": "intelink-manager",
+  "description": "基于react+umi搭建的一个web项目",
   "private": true,
+  "version": "0.0.1",
+  "license": "ISC",
   "scripts": {
     "start": "cross-env PORT=8000 umi dev",
     "start:dev": "cross-env PORT=8001 UMI_ENV=dev umi dev",
