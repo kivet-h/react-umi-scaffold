@@ -1,24 +1,17 @@
 /*
  * @Description: 帖子详情
- * @Author: kivet
- * @Date: 2022-01-28 18:24:43
- * @LastEditTime: 2022-02-07 17:12:20
  */
 
-import { useGetUrlParams } from '@/hooks';
 import type { FC } from 'react';
+import { urlHelper } from '@/utils/urlHelper';
+import styles from './index.less';
 
 interface IProps {}
 
 const PostDetail: FC<IProps> = () => {
-  const { id = '' } = useGetUrlParams();
+  const { id = '' } = urlHelper.getUrlParams();
 
-  return (
-    <div>
-      PostDetail
-      <div>id: {id}</div>
-    </div>
-  );
+  return <div className={styles.container}>帖子详情（id: {id}）</div>;
 };
 
 export default PostDetail;

@@ -2,7 +2,7 @@
  * @Description: 封装私有的本地缓存
  * @Author: kivet
  * @Date: 2022-02-07 10:56:13
- * @LastEditTime: 2022-02-07 10:56:14
+ * @LastEditTime: 2022-02-11 17:38:10
  */
 /* eslint-disable @typescript-eslint/no-for-in-array */
 /* eslint-disable no-param-reassign */
@@ -22,7 +22,7 @@ interface IOptions {
 const defaultOptions = {
   bucket: 'storage',
   deiver: 'localStorage',
-  prefix: 'druid_',
+  prefix: 'intelink_console_',
 };
 
 /**
@@ -235,9 +235,9 @@ class Druid_Storage {
   };
 }
 
-const DruidLocalStorage = new Druid_Storage({ bucket: 'Storage_druid' });
+const DruidLocalStorage = new Druid_Storage({ bucket: 'Storage_intelink_console' });
 const DruidSessionStorage = new Druid_Storage({
-  bucket: 'Storage_druid',
+  bucket: 'Storage_intelink_console',
   driver: 'sessionStorage',
 });
 

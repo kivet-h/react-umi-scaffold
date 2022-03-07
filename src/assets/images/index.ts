@@ -1,10 +1,19 @@
 /*
- * @Description:
- * @Author: kivet
- * @Date: 2022-01-18 18:35:39
- * @LastEditTime: 2022-01-18 18:37:37
+ * @Description: 图片统一导出
  */
 
-import img_logo from './logo.png';
+import login_druid from './login_druid.png';
+import login_bg_img from './login_bg_img.png';
+import menu_img from './menu_img.png';
+import user_default_avatar from './user_default_avatar.png';
+import root_avatar_img from './root_avatar_img.png';
+import invalid_map_icon from './invalid_map_icon.png';
 
-export { img_logo };
+export {
+  login_druid,
+  login_bg_img,
+  menu_img,
+  user_default_avatar,
+  root_avatar_img,
+  invalid_map_icon,
+};

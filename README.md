@@ -1,6 +1,10 @@
-# intelink-manager
+# react-umi-scaffold
 
-一个基于 react + umi + typescript + dva + less + ... 的脚手架项目
+基于 react+umi 搭建的一个 web 项目脚手架
+
+## 技术栈
+
+react + umi + typescript + dva + less + ...
 
 ## 环境要求
 
@@ -8,9 +12,12 @@
 node >=16.0.0
 ```
 
-## 项目仓库地址
+## 项目地址
 
-[项目 GitHub 地址](https://github.com/kivet-h/react-umi-scaffold)
+[项目 GitHub 仓库地址](https://github.com/kivet-h/react-umi-scaffold)
+
+[项目脚手架搭建文档记录地址](https://druid.yuque.com/docs/share/1da6e8cb-0a28-4e1d-bc0a-b766037488e2)
+
 
 ## 项目介绍
 
@@ -89,6 +96,10 @@ umi-demo-project
 本个项目的项目规范，请仔细阅读下面文档进行了解：
 [项目代码规范](https://www.yuque.com/docs/share/df817445-8b1b-4a33-ba06-579b7aa68bec)
 
+## 开发须知
+
+[项目开发须知](https://iaq3krzxp8.feishu.cn/wiki/wikcn9rijU8CytlC47sugI35Wxd)
+
 ## 快速开始
 
 安装依赖
@@ -100,14 +111,16 @@ yarn
 运行项目
 
 ```bash
-# 本地环境运行
-yarn start
-
 # 以测试环境运行
+yarn start
+或
 yarn start:dev
 
-# 以生产环境运行
+# 以正式环境运行
 yarn start:prod
+
+# 运行项目，使用 mock 数据(只配置了测试环境)
+yarn start:mock
 ```
 
 项目代码打包
@@ -115,6 +128,8 @@ yarn start:prod
 ```bash
 # 打包测试环境代码
 yarn build
+或
+yarn build:dev
 
 # 打包正式环境代码
 yarn build:prod
@@ -134,6 +149,16 @@ yarn serve
 serve ./dist
 ```
 
+```bash
+或直接运行打包运行命令
+
+# 验证测试环境
+yarn build:serve:dev
+
+# 验证正式环境
+yarn build:serve:prod
+```
+
 代码提交
 
 ```bash
@@ -149,14 +174,17 @@ git push
 yarn lint:js
 
 # 校验 js 代码并自动修复
-yarn lint:fix:js
+yarn lint:js:fix
 
 # 校验 css 代码
 yarn lint:style
 
 # 校验 css 代码并自动修复
-yarn lint:fix:style
+yarn lint:style:fix
 
-## 校验 js 和 css 代码，并自动修复
+# 校验 js 和 css 代码
+yarn lint
+
+# 校验 js 和 css 代码，并自动修复
 yarn lint:fix
 ```

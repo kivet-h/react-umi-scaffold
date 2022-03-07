@@ -3,7 +3,7 @@
  * @ 规则依赖于 @umijs/fabric，在此基础上，可自行添加自己的规则进行配置
  * @Author: kivet
  * @Date: 2022-01-29 14:37:31
- * @LastEditTime: 2022-02-07 11:08:46
+ * @LastEditTime: 2022-03-07 17:38:40
  */
 
 module.exports = {

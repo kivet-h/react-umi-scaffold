@@ -1,13 +1,10 @@
 /*
  * @Description: 委托管理模块路由配置文件
- * @Author: kivet
- * @Date: 2022-01-29 09:09:54
- * @LastEditTime: 2022-02-07 14:39:59
  */
 
 const entrustManagerMenuRoute = {
   name: '委托管理',
-  icon: 'home',
+  icon: 'icon-weituoguanli',
   path: '/entrustManager',
   component: '@/layouts',
   sort: 2,

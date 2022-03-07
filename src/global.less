@@ -1,23 +1,15 @@
 /*
  * @Description: 全局样式在这里设置
  * @要求!!!：添加修改新的全局样式时，要求必须写上注释，解释此样式修改的是哪个地方的样式，解决的是什么问题。
- * @Author: kivet
- * @Date: 2022-02-07 13:17:02
- * @LastEditTime: 2022-02-07 13:25:50
  */
-
-// ? 举个例子，统一修改项目中 antd 的按钮的样式
-// .ant-btn {
-//   color: #ffffff;
-//   border-radius: 4px;
-//   background-color: @primary-color;
-// }
 
 html,
 body {
+  box-sizing: border-box;
   height: 100vh;
   margin: 0;
-  font-size: @font-size-base;
+  color: @font-color-default;
+  font-size: @font-size-default;
   font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   background-color: @bg-color;
 }
@@ -27,7 +19,213 @@ body {
 
   // .ant-menu-submenu-title {
   //   &[aria-expanded='true'] {
-  //     background-color: aqua;
+  //     margin: 0;
+  //     background-color: #7ec1ff;
   //   }
   // }
+}
+
+// ? 左侧菜单栏顶部图片区域
+.ant-pro-sider-logo {
+  height: 60px;
+  background-color: @primary-color;
+}
+
+// ? Layout 组件的 Header、Content、Footer
+.ant-layout {
+  .ant-layout-header,
+  .ant-layout-content,
+  .ant-layout-footer {
+    background-color: @bg-color;
+  }
+}
+
+// ? 列表页面搜索输入框
+.table-input-search {
+  .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+    // border: 1px solid #f2f2f2;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+    // border: 1px solid #f2f2f2;
+    border-radius: 0 4px 4px 0;
+  }
+
+  input::placeholder {
+    color: #dddddd;
+  }
+}
+
+// ? 列表，可点击跳转内容样式
+.table-click {
+  color: @primary-color;
+  cursor: pointer;
+}
+
+// ? 列表样式
+.ant-table-wrapper {
+  .ant-table-thead > tr > th {
+    padding: 10px;
+    color: #ffffff;
+    background: #9eb3c6;
+  }
+
+  .ant-table-tbody > tr > td {
+    padding: 12px 19px 12px 10px;
+  }
+}
+
+// ? 列表-操作列，危险按钮样式，删除，禁用等
+.table-operate-danger {
+  width: 74px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #f2f2f2;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: @danger-color;
+    border-color: @danger-color;
+  }
+
+  &:active {
+    color: #ffffff;
+    background-color: @danger-color;
+  }
+}
+
+// ? 普通按钮样式
+.ordinary-btn {
+  height: 28px;
+  padding: 0 10px;
+  line-height: 28px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #f2f2f2;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: @primary-color;
+    border-color: @primary-color;
+  }
+
+  &:active {
+    color: #ffffff;
+    background-color: @primary-color;
+  }
+}
+
+// ? 危险按钮样式
+.danger-btn {
+  height: 28px;
+  padding: 0 17px;
+  color: @danger-color;
+  line-height: 28px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid @danger-color;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: #ffffff;
+    background-color: @danger-color;
+    border-color: @danger-color;
+  }
+
+  &:active {
+    color: #ffffff;
+    background-color: @danger-color-high;
+  }
+}
+
+// ? 确认按钮样式
+.confirm-btn {
+  height: 28px;
+  padding: 0 17px;
+  color: @primary-color;
+  line-height: 28px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid @primary-color;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: #ffffff;
+    background-color: @primary-color;
+    border-color: @primary-color;
+  }
+
+  &:active {
+    color: #ffffff;
+    background-color: #0d70cb;
+  }
+}
+
+// ? 容器前面加状态圆圈，绿色
+.status-circle-green {
+  padding-left: 15px;
+
+  &::before {
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #78de8f;
+    border-radius: 50%;
+    content: '';
+  }
+}
+
+// ? 容器前面加状态圆圈，灰色
+.status-circle-grey {
+  padding-left: 15px;
+
+  &::before {
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #d0d0d0;
+    border-radius: 50%;
+    content: '';
+  }
+}
+
+// ? 容器前面加状态圆圈，红色
+.status-circle-red {
+  padding-left: 15px;
+
+  &::before {
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #ff501e;
+    border-radius: 50%;
+    content: '';
+  }
+}
+
+// ? 微调 antd Input.TextArea 组件，清除 icon 位置
+.ant-input-affix-wrapper-textarea-with-clear-btn {
+  .ant-input-clear-icon {
+    top: 10px;
+    right: 5px;
+  }
+}
+
+// ? 所有抽屉, content容器内边距设为0，在页面中自定义边距
+.ant-drawer-body {
+  padding: 0;
 }

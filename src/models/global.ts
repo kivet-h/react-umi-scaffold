@@ -1,27 +1,31 @@
 /*
  * @Description: global 模块 models 层
- * @Author: kivet
- * @Date: 2022-02-07 10:51:31
- * @LastEditTime: 2022-02-07 11:12:47
  */
 
 import type { Effect, ImmerReducer, Subscription } from 'umi';
-import { getDeviceList } from '@/services/global';
+import { fetchLogin } from '@/services/global';
 import { DruidLocalStorage } from '@/utils/storage';
-import { StorageEnum } from '@/utils/enum';
-import { Helper } from '@/utils/helper';
+import { EnumStorage } from '@/utils/enum';
 
 export interface IGlobalModelState {
-  /** 设备列表数据 */
-  deviceList: any[];
+  pageSize: number;
+  pageNum: number;
+  pageId: string;
+  currentListData: any[];
+  /**
+   * 翻页方向
+   * null-首次进入还没翻页时、向前翻页返回第一页时
+   * left-向前翻页
+   * right-向后翻页
+   */
+  direction: null | 'left' | 'right';
 }
 
 export interface IGlobalModelType {
   namespace: 'global';
   state: IGlobalModelState;
   effects: {
-    /** 获取设备列表数据 */
-    getDeviceList: Effect;
+    fetchLogin: Effect;
   };
   reducers: {
     updateState: ImmerReducer<IGlobalModelType>;
@@ -35,13 +39,16 @@ const GlobalModel: IGlobalModelType = {
   namespace: 'global',
 
   state: {
-    deviceList: [],
+    pageSize: 20,
+    pageNum: 1,
+    currentListData: [],
+    pageId: '',
+    direction: null,
   },
   effects: {
-    *getDeviceList({ payload, callback }, { call, put }) {
-      const data = yield call(getDeviceList, payload);
-      yield put(Helper.createAction('updateState')({ deviceList: data || [] }));
-      callback && data.length && callback(data);
+    *fetchLogin({ payload, callback }, { call }) {
+      const data = yield call(fetchLogin, payload) || {};
+      callback && callback(data);
     },
   },
   reducers: {
@@ -55,8 +62,8 @@ const GlobalModel: IGlobalModelType = {
   subscriptions: {
     setup({ history }) {
       history.listen(({ pathname }) => {
-        if (pathname !== '/login' && !DruidLocalStorage.get(StorageEnum.TOKEN)) {
-          // Helper.handleRedirect(); // ? 没有登录功能，暂时屏蔽不重定向
+        if (pathname !== '/login' && !DruidLocalStorage.get(EnumStorage.TOKEN)) {
+          // Helper.handleSignOut(); // ? 没有登录功能，暂时屏蔽不重定向
         }
       });
     },

@@ -13,7 +13,6 @@ declare module '*.svg' {
 
 // ? 全局环境变量
 declare const APP_ENV: string;
-
 // ? 全局基础 API 地址
 declare const API_BASE: string;
 
@@ -22,3 +21,5 @@ declare const API_BASE: string;
  */
 
 declare module 'mockjs';
+
+type IAnyObject = Record<string, any>;

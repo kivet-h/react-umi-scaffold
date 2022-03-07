@@ -1,8 +1,5 @@
 /*
  * @Description: 公共模块 mock
- * @Author: kivet
- * @Date: 2022-02-07 09:45:04
- * @LastEditTime: 2022-02-07 09:55:03
  */
 
 import Mock from 'mockjs';
@@ -10,19 +7,19 @@ import Mock from 'mockjs';
 const { Random } = Mock;
 
 /**
- * mock 5-30 个设备数据
+ * mock 登录
  * @param req
  * @param res
  */
-const getDeviceList = (req: any, res: any) => {
+const mockLogin = (req: any, res: any) => {
   const response = Mock.mock({
-    'data|5-20': [
-      {
-        'id|+1': 1,
-        name: () => Random.cname(),
-        address: () => Random.region(),
-      },
-    ],
+    data: {
+      id: () => Random.id(),
+      username: () => Random.cname(),
+      created_at: () => Random.datetime(),
+      updated_at: () => Random.datetime(),
+      token: () => Random.string(),
+    },
   });
   // ? 模拟请求延迟
   setTimeout(() => {
@@ -31,5 +28,5 @@ const getDeviceList = (req: any, res: any) => {
 };
 
 export default {
-  'GET /device/page/': getDeviceList,
+  'POST /login': mockLogin,
 };

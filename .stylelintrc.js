@@ -2,7 +2,7 @@
  * @Description: 样式校验配置文件
  * @Author: kivet
  * @Date: 2022-01-29 14:39:31
- * @LastEditTime: 2022-02-07 13:20:23
+ * @LastEditTime: 2022-03-07 17:38:26
  */
 
 module.exports = {
@@ -35,7 +35,7 @@ module.exports = {
     // ? 限制数字中允许的小数位数
     'number-max-precision': 2,
     // ? 指定允许的单位的白名单
-    'unit-allowed-list': ['px', '%', 'vw', 'vh'],
+    'unit-allowed-list': ['px', '%', 'vw', 'vh', 'deg'],
     // ? 限制选择器中相邻空行的数量
     'selector-max-empty-lines': 0,
     // ? 16 进制的颜色使用扩写
@@ -98,8 +98,8 @@ module.exports = {
     'selector-attribute-operator-space-after': 'never',
     // ? 规定属性选择器中的运算符之前不能有空格
     'selector-attribute-operator-space-before': 'never',
-    // ? 规定在属性选择器的中属性值不使用引号
-    'selector-attribute-quotes': 'never',
+    // ? 规定在属性选择器的中属性值使用引号
+    'selector-attribute-quotes': 'always',
     // ? 规定在组合选择器之后必须有一个空格
     'selector-combinator-space-after': 'always',
     // ? 规定在组合选择器之前必须有一个空格
@@ -126,7 +126,7 @@ module.exports = {
     'rule-empty-line-before': [
       'always',
       {
-        ignore: ['after-comment'],
+        ignore: ['after-comment', 'first-nested'],
       },
     ],
     // ? 规定注释之前必须存在一空行
