@@ -2,12 +2,12 @@
  * @Description: 详情页 route 配置
  * @Author: kivet
  * @Date: 2022-01-25 15:55:00
- * @LastEditTime: 2022-03-08 09:59:51
+ * @LastEditTime: 2022-03-08 10:46:24
  */
 
 const entrustManagerMenuRoute = {
   path: '/entrustDetail',
-  component: '@/layouts/entrustDetailLayout',
+  component: '@/pages/EntrustManager/entrustDetailLayout',
   routes: [
     {
       name: '委托详情',

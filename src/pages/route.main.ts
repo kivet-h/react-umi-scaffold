@@ -2,12 +2,12 @@
  * @Description: 最外层路由菜单
  * @Author: kivet
  * @Date: 2022-01-25 15:55:00
- * @LastEditTime: 2022-03-08 09:55:55
+ * @LastEditTime: 2022-03-08 10:43:42
  */
 
 const mainRoute = {
   path: '/',
-  component: '@/layouts/mainLayout',
+  component: '@/pages/mainLayout',
   routes: [
     {
       path: '/',
