@@ -2,20 +2,6 @@
  * @Description: 运行时配置
  */
 
-import { LayoutHeader } from '@/layouts/BasicLayout';
-import { menu_img } from '@/assets/images';
-
-/**
- * 详细见：https://umijs.org/zh-CN/plugins/plugin-layout#%E8%BF%90%E8%A1%8C%E6%97%B6%E9%85%8D%E7%BD%AE
- */
-export const layout = (config: any) => {
-  return {
-    ...config,
-    headerRender: () => <LayoutHeader />,
-    logo: menu_img,
-  };
-};
-
 /**
  * 详细见：https://umijs.org/zh-CN/plugins/plugin-dva#dva-%E8%BF%90%E8%A1%8C%E6%97%B6%E9%85%8D%E7%BD%AE
  */

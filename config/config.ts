@@ -24,12 +24,12 @@ export default defineConfig({
   hash: true,
   fastRefresh: {}, // ? 快速刷新
   headScripts: [ICONFONT_URL],
-  layout: {
-    headerHeight: 40, // ? 顶部 Header 高度
-    fixSiderbar: true,
-    title: false,
-    siderWidth: 200, // ? 左侧菜单栏宽度
-    collapsedButtonRender: false, // ? 隐藏 collapsed 按钮
-    iconfontUrl: ICONFONT_URL,
-  },
+  // layout: {
+  //   headerHeight: 40, // ? 顶部 Header 高度
+  //   fixSiderbar: true,
+  //   title: false,
+  //   siderWidth: 200, // ? 左侧菜单栏宽度
+  //   collapsedButtonRender: false, // ? 隐藏 collapsed 按钮
+  //   iconfontUrl: ICONFONT_URL,
+  // },
 });

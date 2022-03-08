@@ -1,27 +1,23 @@
 /*
- * @Description: 帖子管理模块路由配置文件
+ * @Description: 详情页 route 配置
  * @Author: kivet
- * @Date: 2022-01-29 09:09:54
- * @LastEditTime: 2022-02-09 14:30:02
+ * @Date: 2022-01-25 15:55:00
+ * @LastEditTime: 2022-03-08 09:49:38
  */
 
 const postManagerMenuRoute = {
-  name: '帖子管理',
-  path: '/postManager',
-  component: '@/layouts',
-  icon: 'icon-tieziguanli',
-  hideChildrenInMenu: true,
-  sort: 1,
+  path: '/postDetail',
+  component: '@/layouts/postDetailLayout',
   routes: [
     {
-      name: '帖子管理',
-      path: '/postManager',
-      component: '@/pages/PostManager/List',
+      name: '帖子详情',
+      path: '/postDetail/detail',
+      component: '@/pages/PostManager/PostDetail',
     },
     {
-      name: '帖子详情',
-      path: '/postManager/detail',
-      component: '@/pages/PostManager/PostDetail',
+      name: '帖子评论',
+      path: '/postDetail/comment',
+      component: '@/pages/PostManager/DetailPostComment',
     },
     {
       redirect: '/404',

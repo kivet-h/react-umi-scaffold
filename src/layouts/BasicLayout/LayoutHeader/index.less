@@ -2,4 +2,24 @@
   color: #666666;
   background-color: @bg-color;
   border-bottom: 1px solid #eeeeee;
+
+  .bread_box {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+
+    .item {
+      margin-right: 10px;
+      font-size: 20px;
+
+      &[data-click='true'] {
+        color: #d4d4d4;
+        cursor: pointer;
+      }
+
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
 }

@@ -15,7 +15,7 @@ const AllEntrustList: FC<IProps> = () => {
       全部委托列表
       <Button
         onClick={() => {
-          history.push('/entrustManager/all/detail?id=all_entrust_id');
+          history.push('/entrustDetail/detail?id=all_entrust_id');
         }}
       >
         跳转到详情

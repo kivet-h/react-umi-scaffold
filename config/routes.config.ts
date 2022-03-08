@@ -1,12 +1,25 @@
 /*
- * @Description: 路由配置文件
+ * @Description: 整合项目中所有路由配置
  * @Author: kivet
- * @Date: 2022-01-29 13:52:34
- * @LastEditTime: 2022-03-07 17:17:57
+ * @Date: 2022-01-25 15:55:00
+ * @LastEditTime: 2022-03-08 09:30:17
  */
 
 const path = require('path');
 const fs = require('fs');
+
+// ? 一些不需要使用 layout 页面包裹的页面，即左侧菜单栏不需要展示的页面
+const outLayoutRoute = [
+  {
+    name: '登录',
+    path: '/login',
+    component: '@/pages/Login',
+  },
+  {
+    path: '/404',
+    component: '@/pages/404Page',
+  },
+];
 
 /**
  * 读取 pages 目录下所有页面模块的路由配置，注：路由配置文件名，必须以 route[.***].(ts|js) 的格式命名
@@ -15,7 +28,7 @@ const fs = require('fs');
  */
 const generateRoutes = (pagesDir: string, useSubDir: boolean) => {
   const routeFileList: any = [];
-
+  // 递归读取路由配置文件
   const readRouteFileList = (_dir: string, _useSubDir: boolean) => {
     const files = fs.readdirSync(_dir);
     files.forEach((item: any) => {
@@ -33,8 +46,6 @@ const generateRoutes = (pagesDir: string, useSubDir: boolean) => {
       }
     });
   };
-
-  // 递归读取路由配置文件
   readRouteFileList(pagesDir, useSubDir);
   const routes = routeFileList.map((item: string) => require(item));
   return routes;
@@ -45,32 +56,4 @@ const generateRoutes = (pagesDir: string, useSubDir: boolean) => {
  */
 const routes = generateRoutes(path.join(__dirname, '../src/pages'), true);
 
-/**
- * 由于是自动去获取所有模块下的 route 配置，顺序肯定是按 pages 下目录循序拿到的，可能得到的菜单路由顺序不能达到设计稿的顺序效果，
- * 所以需要进行排序处理，根据 sort 字段对菜单栏进行排序，如果没有配置sort，默认为0，即展示在菜单栏最前面
- */
-const sortRoutes = routes.sort(
-  (objA: { sort: number }, objB: { sort: number }) => (objA.sort || 0) - (objB.sort || 0),
-);
-
-export default [
-  {
-    name: '登录',
-    path: '/login',
-    component: '@/pages/Login',
-    hideInMenu: true,
-    layout: false,
-  },
-  {
-    path: '/404',
-    component: '@/pages/404Page',
-  },
-  {
-    path: '/',
-    redirect: '/postManager',
-  },
-  ...sortRoutes,
-  {
-    redirect: '/404',
-  },
-];
+export default [...outLayoutRoute, ...routes];

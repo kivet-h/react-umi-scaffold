@@ -15,7 +15,7 @@ const SyncedEntrust: FC<IProps> = () => {
       已同步委托列表
       <Button
         onClick={() => {
-          history.push('/entrustManager/synced/detail?id=synced_entrust_id');
+          history.push('/entrustDetail/detail?id=synced_entrust_id');
         }}
       >
         跳转到详情

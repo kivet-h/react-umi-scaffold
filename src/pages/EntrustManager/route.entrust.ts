@@ -1,35 +1,28 @@
 /*
- * @Description: 委托管理模块路由配置文件
+ * @Description: 详情页 route 配置
+ * @Author: kivet
+ * @Date: 2022-01-25 15:55:00
+ * @LastEditTime: 2022-03-08 09:59:51
  */
 
 const entrustManagerMenuRoute = {
-  name: '委托管理',
-  icon: 'icon-weituoguanli',
-  path: '/entrustManager',
-  component: '@/layouts',
-  sort: 2,
+  path: '/entrustDetail',
+  component: '@/layouts/entrustDetailLayout',
   routes: [
     {
-      name: '全部委托',
-      path: '/entrustManager/all',
-      component: '@/pages/EntrustManager/AllEntrust',
-    },
-    {
-      name: '全部委托详情',
-      path: '/entrustManager/all/detail',
+      name: '委托详情',
+      path: '/entrustDetail/detail',
       component: '@/pages/EntrustManager/EntrustDetail',
-      hideInMenu: true,
     },
     {
-      name: '已同步委托',
-      path: '/entrustManager/synced',
-      component: '@/pages/EntrustManager/SyncedEntrust',
+      name: '回传记录',
+      path: '/entrustDetail/upload',
+      component: '@/pages/EntrustManager/DetailUploadList',
     },
     {
-      name: '已同步委托详情',
-      path: '/entrustManager/synced/detail',
-      component: '@/pages/EntrustManager/EntrustDetail',
-      hideInMenu: true,
+      name: '收取记录',
+      path: '/entrustDetail/collect',
+      component: '@/pages/EntrustManager/DetailCollectList',
     },
     {
       redirect: '/404',

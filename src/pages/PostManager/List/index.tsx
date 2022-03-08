@@ -15,7 +15,7 @@ const PostManagerList: FC<IProps> = () => {
       帖子列表
       <Button
         onClick={() => {
-          history.push('/postManager/detail?id=post_id');
+          history.push('/postDetail/detail?id=post_id');
         }}
       >
         跳转到详情
