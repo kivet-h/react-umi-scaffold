@@ -2,7 +2,7 @@
  * @Description: 最外层路由菜单
  * @Author: kivet
  * @Date: 2022-01-25 15:55:00
- * @LastEditTime: 2022-03-08 10:43:42
+ * @LastEditTime: 2022-03-08 10:51:38
  */
 
 const mainRoute = {
@@ -36,9 +36,9 @@ const mainRoute = {
         },
       ],
     },
-    // {
-    //   redirect: '/404',
-    // },
+    {
+      redirect: '/404',
+    },
   ],
 };
 

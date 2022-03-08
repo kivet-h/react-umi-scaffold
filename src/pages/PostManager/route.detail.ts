@@ -2,10 +2,10 @@
  * @Description: 详情页 route 配置
  * @Author: kivet
  * @Date: 2022-01-25 15:55:00
- * @LastEditTime: 2022-03-08 10:45:44
+ * @LastEditTime: 2022-03-08 10:51:23
  */
 
-const postManagerMenuRoute = {
+const postDetailMenuRoute = {
   path: '/postDetail',
   component: '@/pages/PostManager/postDetailLayout',
   routes: [
@@ -25,4 +25,4 @@ const postManagerMenuRoute = {
   ],
 };
 
-module.exports = postManagerMenuRoute;
+module.exports = postDetailMenuRoute;

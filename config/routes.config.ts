@@ -2,7 +2,7 @@
  * @Description: 整合项目中所有路由配置
  * @Author: kivet
  * @Date: 2022-01-25 15:55:00
- * @LastEditTime: 2022-03-08 09:30:17
+ * @LastEditTime: 2022-03-08 10:52:52
  */
 
 const path = require('path');
@@ -56,4 +56,10 @@ const generateRoutes = (pagesDir: string, useSubDir: boolean) => {
  */
 const routes = generateRoutes(path.join(__dirname, '../src/pages'), true);
 
-export default [...outLayoutRoute, ...routes];
+export default [
+  ...outLayoutRoute,
+  ...routes,
+  {
+    redirect: '/404',
+  },
+];

@@ -2,10 +2,10 @@
  * @Description: 详情页 route 配置
  * @Author: kivet
  * @Date: 2022-01-25 15:55:00
- * @LastEditTime: 2022-03-08 10:46:24
+ * @LastEditTime: 2022-03-08 10:51:09
  */
 
-const entrustManagerMenuRoute = {
+const entrustDetailMenuRoute = {
   path: '/entrustDetail',
   component: '@/pages/EntrustManager/entrustDetailLayout',
   routes: [
@@ -30,4 +30,4 @@ const entrustManagerMenuRoute = {
   ],
 };
 
-module.exports = entrustManagerMenuRoute;
+module.exports = entrustDetailMenuRoute;
