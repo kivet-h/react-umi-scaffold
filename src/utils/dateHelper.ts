@@ -9,15 +9,6 @@ dayjs.extend(utc);
 
 const dateHelper = {
   /**
-   * UTC 时间转 本地时间
-   * @param utcDate 后端返回的UTC时间
-   * @param format 返回时间格式，默认： YYYY-MM-DD HH:mm:ss
-   * @param placeholder 时间无效时返回占位符，默认： -
-   */
-  utcToLocal: (utcDate: string, format: string = YMDHMS, placeholder: string = '-') =>
-    utcDate ? dayjs(utcDate).utc().format(format) : placeholder,
-
-  /**
    * 计算某个时间节点（dateVal）与当前时间之间，相差xx天xx月xx小时xx分钟xx秒
    * @param {string} dateVal 对比时间
    * @param {'D' | 'DHMS' | 'DHM'} type 返回数据格式，默认：D

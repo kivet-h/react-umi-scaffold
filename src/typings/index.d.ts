@@ -10,27 +10,3 @@ export type IOption<T = string, S = string> = {
   /** 对应文案 */
   label: S;
 };
-
-/**
- * 图片列表 item 类型
- */
-export type IImgListItem = {
-  /** 图片文件id */
-  id?: string;
-  /** 原始画质 */
-  url_origin?: string;
-  /** 常规画质 */
-  url_normal?: string;
-  /** 缩略画质 */
-  url_thumb?: string;
-};
-
-/**
- * 生物类别
- * @Birds 鸟类
- * @Mammals 哺乳类
- * @Fishes 鱼类
- * @Reptiles 爬行类
- * @Amphibian 两栖类
- */
-export type IBiologicalLabel = 'Birds' | 'Mammals' | 'Fishes' | 'Reptiles' | 'Amphibian';

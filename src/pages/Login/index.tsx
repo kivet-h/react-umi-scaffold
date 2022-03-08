@@ -7,7 +7,6 @@ import { Layout, Image, Form, Input, Checkbox, Button, message } from 'antd';
 import type { ConnectProps, Dispatch, IGlobalModelState, Loading } from 'umi';
 import { connect, history } from 'umi';
 import { DruidLocalStorage, DruidSessionStorage } from '@/utils/storage';
-import { global_data_error_code_text } from '@/utils/global-data';
 import { login_druid, login_bg_img } from '@/assets/images';
 import { EnumStorage } from '@/utils/enum';
 import { Helper } from '@/utils/helper';
@@ -47,7 +46,7 @@ const Login: FC<IProps> = (props: IProps) => {
         callback: (loginRes: any) => {
           const { code = 0 } = loginRes;
           if (code) {
-            message.info(global_data_error_code_text[code]);
+            message.info('登录失败');
             return;
           }
 
