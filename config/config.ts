@@ -11,7 +11,7 @@ const ICONFONT_URL = '//at.alicdn.com/t/font_3173501_a08wvro2px.js';
 const { NODE_ENV } = process.env;
 
 export default defineConfig({
-  base: '/console/',
+  // base: '/console/',
   routes,
   theme,
   define: {},
@@ -20,7 +20,7 @@ export default defineConfig({
   },
   outputPath: 'build',
   exportStatic: {},
-  publicPath: NODE_ENV === 'production' ? '/console/' : '/',
+  publicPath: '/',
   hash: true,
   fastRefresh: {}, // ? 快速刷新
   headScripts: [ICONFONT_URL],
