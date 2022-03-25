@@ -10,6 +10,7 @@
     "start:mock": "cross-env PORT=8002 UMI_ENV=dev MOCK=yes umi dev",
     "start:prod": "cross-env PORT=8003 UMI_ENV=prod umi dev",
     "build": "cross-env UMI_ENV=dev umi build",
+    "build:update": "cross-env UMI_ENV=dev umi build && scp -P 6666 -r ./build root@124.222.55.193:/usr/share/nginx/html",
     "build:dev": "cross-env UMI_ENV=dev umi build",
     "build:prod": "cross-env UMI_ENV=prod umi build",
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",

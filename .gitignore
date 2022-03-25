@@ -8,7 +8,8 @@
 /package-lock.json
 
 # production
-/dist
+/build
+.vscode/
 
 # misc
 .DS_Store
